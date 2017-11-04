@@ -102,7 +102,7 @@ switch(TARGET) {
       parts.devServer({
         // Customize host/port here if needed
         //host: process.env.HOST,
-        host: 'react2-maramos.c9users.io',
+        host: process.env.C9_HOSTNAME,
         https: false,
         port: process.env.PORT,
         poll: ENABLE_POLLING
