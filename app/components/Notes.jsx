@@ -1,6 +1,5 @@
 import React from 'react';
 import Note from './Note';
-import Editable from './Editable';
 
 /*    
 export default ({notes}) => (
@@ -10,19 +9,14 @@ export default ({notes}) => (
     </ul>
     )
 */    
-export default ({notes, onNoteClick=() => {}, onEdit = () => {}, onDelete = () =>{}}) => (
-    <ul className = "notes">{notes.map(({id, editing, task}) =>
+export default ({notes, onDelete = () =>{}}) => (
+    <ul>{notes.map(({id, task}) =>
         <li key={id}>
-            <Note className = "note" onClick = {onNoteClick.bind(null, id)} >
-                <Editable
-                className = "editable"
-                editing = {editing}
-                value = {task}
-                onEdit = {onEdit.bind(null, id)}
-                />
-                <button className = "delete" 
-                onClick={onDelete.bind(null,id)}>x</button>
-            </Note>
+            <Note
+                onDelete = {onDelete.bind(null,id)}
+                task = {task}
+            />
           </li>
         )}</ul>
     )
+ 

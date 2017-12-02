@@ -20,6 +20,7 @@ body {
 }
 
 .note {
+  color: blue;
   overflow: auto;
 
   margin-bottom: 0.5em;
