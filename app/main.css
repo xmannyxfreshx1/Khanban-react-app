@@ -1,5 +1,5 @@
 body {
-  background-color: cornsilk;
+  background-color: #ffcc66;
 
   font-family: sans-serif;
 }
@@ -20,7 +20,7 @@ body {
 }
 
 .note {
-  color: blue;
+  color: #6666ff;
   overflow: auto;
 
   margin-bottom: 0.5em;
