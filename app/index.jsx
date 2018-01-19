@@ -1,27 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import App from './components/App';
 
+import Provider from './components/Provider';
 
-if(process.env.NODE_ENV !== 'production') {
-  React.Perf = require('react-addons-perf');
-}
-
-//const HelloWorld= React.createClass({
- // stutter = 3
-  
-  //render:function(){
-    
-    
-//  }
-  
-  
-  
- // });
 
 ReactDOM.render(
-  //<div>Hello world we in this peiece! we in here!!</div>,
-  < App />,
-  document.getElementById('app')
-);
+  
+  <Provider>
+    < App/ >
+    </Provider>,
+    
+    document.getElementById('app')
+  
+  );
