@@ -4,9 +4,12 @@ import {DragSource, DropTarget} from 'react-dnd';
 import ItemTypes from '../constants/itemTypes';
 
 const Note = ({
-  connectDragSource, connectDropTarget, isDragging, isOver, onMove, id, children, ...props
+  connectDragSource, connectDropTarget, isDragging, isOver, onMove, id, editing, children, ...props
 }) => {
-  return compose(connectDragSource, connectDropTarget)(
+  // pass through if editting
+  const dragSource = editing ? a => a : connectDragSource;
+  
+  return compose(dragSource, connectDropTarget)(
     <div style={{
       opacity: isDragging || isOver ? 0:1
     }} {...props}>

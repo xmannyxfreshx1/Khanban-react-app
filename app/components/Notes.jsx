@@ -15,6 +15,7 @@ export default ({notes, onNoteClick=() => {}, onEdit = () => {}, onDelete = () =
     <ul className = "notes">{notes.map(({id, editing, task}) =>
         <li key={id}>
             <Note className = "note" id = {id}
+                editing = {editing}
                 onClick = {onNoteClick.bind(null, id)}
                 onMove = {LaneActions.move}>
                 <Editable
